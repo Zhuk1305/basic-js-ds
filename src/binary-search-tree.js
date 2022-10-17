@@ -68,6 +68,7 @@ class BinarySearchTree {
 
   remove(data) {
     this.main = removeNode(this.main, data);
+
     function removeNode(node, data) {
       if (!node) {
         return null;
@@ -93,7 +94,7 @@ class BinarySearchTree {
 
         let minFromRight = node.right;
         while (minFromRight.left) {
-          minFromRight = minFromRight;
+          minFromRight = minFromRight.left;
         }
         node.data = minFromRight.data;
 
